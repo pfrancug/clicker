@@ -1,6 +1,10 @@
 body {
 	width: 100vw;
+	min-width:770px;
+
 	height: 100vh;
+		min-height: 720px;
+
 	margin: 0;
 	padding: 0;
 	background: #646464;
@@ -16,8 +20,7 @@ body {
 .container {
 	width: 100%;
 	height: 100%;
-	min-width: 600px;
-	min-height: 720px;
+
 }
 
 .container > div {
@@ -38,7 +41,7 @@ body {
 	outline: 1px solid #239023;
 	outline-offset: -5px;
 	background: -webkit-linear-gradient(#5bd75b 0%, #32cd32 30%, #32cd32 70%, #5bd75b 100%);
-	background: linear-gradient(#5bd75b 0%, #32cd32 30%, #32cd32 70%, #5bd75b 100%);
+	        background: linear-gradient(#5bd75b 0%, #32cd32 30%, #32cd32 70%, #5bd75b 100%);
 	box-shadow: 0 2px 0 #239023;
 }
 
@@ -52,13 +55,24 @@ body {
 	height: 50px;
 	margin: 0 20px;
 	background: -webkit-linear-gradient(#ffad33 0%, #ff9900 30%, #ff9900 70%, #ffad33 100%);
-	background: linear-gradient(#ffad33 0%, #ff9900 30%, #ff9900 70%, #ffad33 100%);
+	        background: linear-gradient(#ffad33 0%, #ff9900 30%, #ff9900 70%, #ffad33 100%);
 	box-shadow: 0 4px 0 #b36b00;
 	outline: 1px solid #b36b00;
 	outline-offset: -5px;
 	line-height: 50px;
 	cursor: pointer;
 	cursor: hand;
+}
+
+.sec {
+	width: 160px;
+	margin: 20px;
+	outline: 1px solid #239023;
+	outline-offset: -5px;
+	background: -webkit-linear-gradient(#5bd75b 0%, #32cd32 30%, #32cd32 70%, #5bd75b 100%);
+	        background: linear-gradient(#5bd75b 0%, #32cd32 30%, #32cd32 70%, #5bd75b 100%);
+	box-shadow: 0 2px 0 #239023;
+	line-height: 30px;
 }
 
 .collect:active {
@@ -69,18 +83,30 @@ body {
 
 .connector {
 	width: calc(100% - 600px);
+	min-width:170px;
 	background: #704359;
 	outline: 1px dashed #bc8fa6;
 }
 
-.info,
+.adminpanel{
+	width:150px;
+	margin: 0 20px;
+}
+.k,
+.m{
+	width:75px;
+	float:left;
+}
+
+.admin,
 .buildings,
 .hack {
-	width: calc(100%-40px);
+	width:130px;
+	display:table;
 	min-height: 40px;
-	margin: 20px 20px 0 20px;
+	margin: 20px;
 	background: -webkit-linear-gradient(#ff8080 0%, #ff4d4d 30%, #ff4d4d 70%, #ff8080 100%);
-	background: linear-gradient(#ff8080 0%, #ff4d4d 30%, #ff4d4d 70%, #ff8080 100%);
+	        background: linear-gradient(#ff8080 0%, #ff4d4d 30%, #ff4d4d 70%, #ff8080 100%);
 	box-shadow: 0 4px 0 #b30000;
 	outline: 1px solid #b30000;
 	outline-offset: -5px;
@@ -89,21 +115,31 @@ body {
 	cursor: hand;
 }
 
-.hack {
-	width: 70px !important;
-	float: left;
+.buildings{
+	margin:0 0 20px;
 }
 
-.info:active,
-.buildings:active,
+.hack {
+	width:55px !important;
+	margin: 0 0 20px;
+}
+
+.admin:active,
 .hack:active {
 	-webkit-transform: translate(0px, 2px);
 	        transform: translate(0px, 2px);
 	box-shadow: 0 2px 0 #b30000;
 }
 
+.buildingsactive{
+	-webkit-transform: translate(0px, 2px);
+	        transform: translate(0px, 2px);
+	box-shadow: 0 2px 0 #b30000 !important;
+}
+
 .miners {
 	width: 400px;
+	float:left;
 	background: #435970;
 	outline: 1px dashed #8fa6bc;
 }
@@ -111,10 +147,9 @@ body {
 .miner {
 	width: 360px;
 	height: 90px;
-	background: #678;
 	margin: 20px 20px 0 20px;
 	background: -webkit-linear-gradient(#3396ff 0%, #007bff 30%, #007bff 70%, #3396ff 100%);
-	background: linear-gradient(#3396ff 0%, #007bff 30%, #007bff 70%, #3396ff 100%);
+	        background: linear-gradient(#3396ff 0%, #007bff 30%, #007bff 70%, #3396ff 100%);
 	box-shadow: 0 4px 0 #0056b3;
 	outline: 1px solid #0056b3;
 	outline-offset: -5px;

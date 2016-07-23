@@ -29,19 +29,10 @@
 		<div class=overview>
 			<div class=money>
 				<div>Money:</div>
-				<div id=money>$0</div>
+				<div id=money>$0.0</div>
 			</div>
 			<div class=collect onclick=hackClick(1)>Click</div>
-		</div>
-		<div class=connector>
-			<div class=info onclick=hackClick(-999999999999)>Do not use any of these, these are hacks! :)</div>
-			<div class=buildings>Show me!</div>
-			<div class=hack onclick=hackClick(1000)>1K</div>
-			<div class=hack onclick=hackClick(10000)>10K</div>
-			<div class=hack onclick=hackClick(100000)>100K</div>
-			<div class=hack onclick=hackClick(1000000)>1M</div>
-			<div class=hack onclick=hackClick(10000000)>10M</div>
-			<div class=hack onclick=hackClick(100000000)>100M</div>
+			<div class=sec>$0.0/s</div>
 		</div>
 		<div class=miners>
 			<div class=miner>
@@ -81,6 +72,23 @@
 				<div class=cost id=costSix>$1400000</div>
 			</div>
 		</div>
+		<div class=connector>
+			<div class=admin>admin panel</div>
+			<div class=adminpanel hidden>
+				<div class=buildings>show miners</div>
+				<div class=k>
+					<div class=hack onclick=hackClick(1000)>1K</div>
+					<div class=hack onclick=hackClick(10000)>10K</div>
+					<div class=hack onclick=hackClick(100000)>100K</div>
+				</div>
+				<div class=m>
+					<div class=hack onclick=hackClick(1000000)>1M</div>
+					<div class=hack onclick=hackClick(10000000)>10M</div>
+					<div class=hack onclick=hackClick(100000000)>100M</div>
+				</div>
+			</div>
+		</div>
+
 	</div>
 	<script src="jquery-3.1.0.min.js"></script>
 	<script src="index.js"></script>
