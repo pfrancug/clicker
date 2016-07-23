@@ -1,7 +1,12 @@
 body {
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
 	background: #646464;
 	text-align: center;
 	color: #242424;
+	font-family: "Ubuntu", arial, sans-serif;
 	-webkit-user-select: none;
 	   -moz-user-select: none;
 	    -ms-user-select: none;
@@ -9,68 +14,152 @@ body {
 }
 
 .container {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	-webkit-transform: translate(-50%, -50%);
-	        transform: translate(-50%, -50%);
-	width: 300px;
-	clear: both;
-	background: #949494;
+	width: 100%;
+	height: 100%;
+	min-width: 600px;
+	min-height: 720px;
 }
 
-.overview,
-.miners {
-	overflow: auto;
-	margin: 3px;
-	background: #242424;
-}
-
-.collect {
-	width: 130px;
-	height: 50px;
+.container > div {
+	height: 100%;
 	float: left;
-	margin: 16px 0 16px 16px;
-	background: #ffaa00;
-	outline: 1px solid #ff7700;
 	outline-offset: -5px;
-	line-height: 50px;
+}
+
+.overview {
+	width: 200px;
+	background: #597043;
+	outline: 1px dashed #a6bc8f;
 }
 
 .money {
-	float: right;
-	margin: 16px 16px 16px 0;
+	width: 160px;
+	margin: 20px;
+	outline: 1px solid #239023;
+	outline-offset: -5px;
+	background: -webkit-linear-gradient(#5bd75b 0%, #32cd32 30%, #32cd32 70%, #5bd75b 100%);
+	background: linear-gradient(#5bd75b 0%, #32cd32 30%, #32cd32 70%, #5bd75b 100%);
+	box-shadow: 0 2px 0 #239023;
 }
 
 .money > div {
-	height: 20px;
-	width: 130px;
-	background: #aadd22;
-}
-
-.money > div:nth-child(1) {
-	margin: 0 0 10px 0;
-}
-
-.miners > div {
-	overflow: auto;
-	margin: 15px;
-	clear: both;
-}
-
-.miners > div > div {
-	width: 130px;
-	height: 30px;
-	float: left;
-	margin: 1px;
-	background: #0088ff;
-	outline: 1px solid #e4e4e4;
-	outline-offset: -2px;
+	width: 160px;
 	line-height: 30px;
-	color: #f4f4f4;
 }
 
-.buy {
-	background: #cc2288 !important;
-	outline: 1px solid #ff0033 !important;
+.collect {
+	width: 160px;
+	height: 50px;
+	margin: 0 20px;
+	background: -webkit-linear-gradient(#ffad33 0%, #ff9900 30%, #ff9900 70%, #ffad33 100%);
+	background: linear-gradient(#ffad33 0%, #ff9900 30%, #ff9900 70%, #ffad33 100%);
+	box-shadow: 0 4px 0 #b36b00;
+	outline: 1px solid #b36b00;
+	outline-offset: -5px;
+	line-height: 50px;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.collect:active {
+	-webkit-transform: translate(0px, 2px);
+	        transform: translate(0px, 2px);
+	box-shadow: 0 2px 0 #b36b00;
+}
+
+.connector {
+	width: calc(100% - 600px);
+	background: #704359;
+	outline: 1px dashed #bc8fa6;
+}
+
+.info,
+.buildings,
+.hack {
+	width: calc(100%-40px);
+	min-height: 40px;
+	margin: 20px 20px 0 20px;
+	background: -webkit-linear-gradient(#ff8080 0%, #ff4d4d 30%, #ff4d4d 70%, #ff8080 100%);
+	background: linear-gradient(#ff8080 0%, #ff4d4d 30%, #ff4d4d 70%, #ff8080 100%);
+	box-shadow: 0 4px 0 #b30000;
+	outline: 1px solid #b30000;
+	outline-offset: -5px;
+	line-height: 40px;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.hack {
+	width: 70px !important;
+	float: left;
+}
+
+.info:active,
+.buildings:active,
+.hack:active {
+	-webkit-transform: translate(0px, 2px);
+	        transform: translate(0px, 2px);
+	box-shadow: 0 2px 0 #b30000;
+}
+
+.miners {
+	width: 400px;
+	background: #435970;
+	outline: 1px dashed #8fa6bc;
+}
+
+.miner {
+	width: 360px;
+	height: 90px;
+	background: #678;
+	margin: 20px 20px 0 20px;
+	background: -webkit-linear-gradient(#3396ff 0%, #007bff 30%, #007bff 70%, #3396ff 100%);
+	background: linear-gradient(#3396ff 0%, #007bff 30%, #007bff 70%, #3396ff 100%);
+	box-shadow: 0 4px 0 #0056b3;
+	outline: 1px solid #0056b3;
+	outline-offset: -5px;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.miners > div:active {
+	-webkit-transform: translate(0px, 2px);
+	        transform: translate(0px, 2px);
+	box-shadow: 0 2px 0 #0056b3;
+}
+
+.miner > div {
+	float: left;
+}
+
+.pic {
+	position: relative;
+	top: 10px;
+	left: 10px;
+	width: 70px;
+	height: 70px;
+	line-height: 70px;
+}
+
+.name {
+	position: relative;
+	top: 20px;
+	left: 20px;
+	width: 180px;
+}
+
+.quantity {
+	position: relative;
+	top: 10px;
+	left: 30px;
+	width: 70px;
+	height: 70px;
+	line-height: 70px;
+}
+
+.cost {
+	position: relative;
+	bottom: 20px;
+	left: 90px;
+	width: 180px;
 }
