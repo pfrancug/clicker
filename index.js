@@ -1,3 +1,9 @@
+/*
+Copyright (C) 2016, Piotr Francug
+This file is licensed under the GNU General Public License v3.0
+A copy of this license may be found at https://www.gnu.org/licenses/gpl-3.0.txt
+*/
+
 /************ vars ***********/
 
 var money = 0;
