@@ -21,6 +21,28 @@ function hackClick(number) {
 	$('#money').text("$" + nFormatter(money, 2));
 };
 
+/************ cookies ***********/
+
+$(document).ready(function(){
+	if($.cookie('money') >= 0){
+		money = money + parseFloat($.cookie('money'));
+		console.log('money = $' + $.cookie('money'));
+	}
+	else{
+		$.cookie('money', money, { expires: 31 });
+		console.log('money saved');
+	}
+});
+
+$('#money').click(function(){
+	$.cookie('money', money, { expires: 31 });
+	console.log('money saved');
+});
+
+$('.sec').click(function(){
+	console.log($.cookie('money'));
+});
+
 /************ miners ***********/
 
 $('.miner:nth-child(1)').click(function() {
