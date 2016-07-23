@@ -1,0 +1,76 @@
+body {
+	background: #646464;
+	text-align: center;
+	color: #242424;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+}
+
+.container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
+	width: 300px;
+	clear: both;
+	background: #949494;
+}
+
+.overview,
+.miners {
+	overflow: auto;
+	margin: 3px;
+	background: #242424;
+}
+
+.collect {
+	width: 130px;
+	height: 50px;
+	float: left;
+	margin: 16px 0 16px 16px;
+	background: #ffaa00;
+	outline: 1px solid #ff7700;
+	outline-offset: -5px;
+	line-height: 50px;
+}
+
+.money {
+	float: right;
+	margin: 16px 16px 16px 0;
+}
+
+.money > div {
+	height: 20px;
+	width: 130px;
+	background: #aadd22;
+}
+
+.money > div:nth-child(1) {
+	margin: 0 0 10px 0;
+}
+
+.miners > div {
+	overflow: auto;
+	margin: 15px;
+	clear: both;
+}
+
+.miners > div > div {
+	width: 130px;
+	height: 30px;
+	float: left;
+	margin: 1px;
+	background: #0088ff;
+	outline: 1px solid #e4e4e4;
+	outline-offset: -2px;
+	line-height: 30px;
+	color: #f4f4f4;
+}
+
+.buy {
+	background: #cc2288 !important;
+	outline: 1px solid #ff0033 !important;
+}

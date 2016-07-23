@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html >
+	<head>
+		<meta charset="UTF-8">
+		<title>clicker</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div class=container>
+		<div class=overview>
+			<div class=collect onclick="hackClick(1)">Click</div>
+			<div class=money>
+				<div>Money:</div>
+				<div id=money>0</div>
+			</div>
+		</div>
+		<div class=miners>
+			<div class=beginner>
+				<div>(x1) Beginner:</div>
+				<div id=beginner>0</div>
+				<div class=buy onclick=buyBeginner()>Buy for:</div>
+				<div id=beginnerCost>15</div>
+			</div>
+			<div class=intermediate>
+				<div>(x5) Intermediate:</div>
+				<div id=intermediate>0</div>
+				<div class=buy onclick=buyIntermediate()>Buy for:</div>
+				<div id=intermediateCost>110</div>
+			</div>
+			<div class=advanced>
+				<div>(x15) Advanced:</div>
+				<div id=advanced>0</div>
+				<div class=buy onclick=buyAdvanced()>Buy for:</div>
+				<div id=advancedCost>1100</div>
+			</div>
+			<div class=legendary>
+				<div>(x50) Legendary:</div>
+				<div id=legendary>0</div>
+				<div class=buy onclick=buyLegendary()>Buy for:</div>
+				<div id=legendaryCost>11000</div>
+			</div>
+		</div>
+	</div>
+		<script src="jquery-3.1.0.min.js"></script>
+		<script src="index.js"></script>
+	</body>
+</html>
