@@ -6,6 +6,7 @@
 	<title>clicker</title>
 	<link rel="stylesheet" href="style.css">
 	<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Ubuntu'>
+	<script src="https://use.fontawesome.com/3015caa14c.js"></script>
 	<script>
 		(function(i, s, o, g, r, a, m) {
 			i['GoogleAnalyticsObject'] = r;
@@ -25,73 +26,83 @@
 </head>
 
 <body>
-	<div class=container>
-		<div class=overview>
-			<div class=money>
+	<div class='container'>
+		<div class='overview'>
+			<div class='money'>
 				<div>Money:</div>
-				<div id=money>$0.0</div>
+				<div id='money'>$0.0</div>
 			</div>
-			<div class=collect onclick=hackClick(1)>Click</div>
-			<div class=sec>$0.0/s</div>
+			<div class='collect' onclick='hackClick(1)'>Click</div>
+			<div class='sec'>$0.0/s</div>
 		</div>
-		<div class=miners>
-			<div class=miner>
-				<div class=pic>IMG</div>
-				<div class=name>One</div>
-				<div class=quantity id=quantityOne>0</div>
-				<div class=cost id=costOne>$15</div>
+		<div class='miners'>
+			<div class='miner'>
+				<div class='pic'><i class="fa fa-university" aria-hidden="true"></i></div>
+				<div class='name'>One</div>
+				<div class='quantity' id='quantityOne'>0</div>
+				<div class='cost' id='costOne'>$15</div>
 			</div>
-			<div class=miner hidden>
-				<div class=pic>IMG</div>
-				<div class=name>Two</div>
-				<div class=quantity id=quantityTwo>0</div>
-				<div class=cost id=costTwo>$100</div>
+			<div class='miner' hidden>
+				<div class='pic'><i class="fa fa-university" aria-hidden="true"></i></div>
+				<div class='name'>Two</div>
+				<div class='quantity' id='quantityTwo'>0</div>
+				<div class='cost' id='costTwo'>$100</div>
 			</div>
-			<div class=miner hidden>
-				<div class=pic>IMG</div>
-				<div class=name>Three</div>
-				<div class=quantity id=quantityThree>0</div>
-				<div class=cost id=costThree>$1100</div>
+			<div class='miner' hidden>
+				<div class='pic'><i class="fa fa-university" aria-hidden="true"></i></div>
+				<div class='name'>Three</div>
+				<div class='quantity' id='quantityThree'>0</div>
+				<div class='cost' id='costThree'>$1100</div>
 			</div>
-			<div class=miner hidden>
-				<div class=pic>IMG</div>
-				<div class=name>Four</div>
-				<div class=quantity id=quantityFour>0</div>
-				<div class=cost id=costFour>$12000</div>
+			<div class='miner' hidden>
+				<div class='pic'><i class="fa fa-university" aria-hidden="true"></i></div>
+				<div class='name'>Four</div>
+				<div class='quantity' id='quantityFour'>0</div>
+				<div class='cost' id='costFour'>$12000</div>
 			</div>
-			<div class=miner hidden>
-				<div class=pic>IMG</div>
-				<div class=name>Five</div>
-				<div class=quantity id=quantityFive>0</div>
-				<div class=cost id=costFive>$130000</div>
+			<div class='miner' hidden>
+				<div class='pic'><i class="fa fa-university" aria-hidden="true"></i></div>
+				<div class='name'>Five</div>
+				<div class='quantity' id='quantityFive'>0</div>
+				<div class='cost' id='costFive'>$130000</div>
 			</div>
-			<div class=miner hidden>
-				<div class=pic>IMG</div>
-				<div class=name>Six</div>
-				<div class=quantity id=quantitySix>0</div>
-				<div class=cost id=costSix>$1400000</div>
+			<div class='miner' hidden>
+				<div class='pic'><i class="fa fa-university" aria-hidden="true"></i></div>
+				<div class='name'>Six</div>
+				<div class='quantity' id='quantitySix'>0</div>
+				<div class='cost' id='costSix'>$1400000</div>
 			</div>
 		</div>
-		<div class=connector>
-			<div class=admin>admin panel</div>
-			<div class=adminpanel hidden>
-				<div class=buildings>show miners</div>
-				<div class=k>
-					<div class=hack onclick=hackClick(1000)>1K</div>
-					<div class=hack onclick=hackClick(10000)>10K</div>
-					<div class=hack onclick=hackClick(100000)>100K</div>
+		<div class='upgrade'>
+			<div class='upgrades'>Upgrades</div>
+			<div class='upgradespanel' hidden>
+				<div class='up'>not</div>
+				<div class='up'>yet</div>
+				<div class='up'>ready</div>
+			</div>
+		</div>
+		<div class='connector'>
+			<div class='admin'>admin panel</div>
+			<div class='adminpanel' hidden>
+				<div class='buildings'>show miners</div>
+				<div class='k'>
+					<div class='hack' onclick='hackClick(1000)'>1k</div>
+					<div class='hack' onclick='hackClick(10000)'>10k</div>
+					<div class='hack' onclick='hackClick(100000)'>100k</div>
 				</div>
-				<div class=m>
-					<div class=hack onclick=hackClick(1000000)>1M</div>
-					<div class=hack onclick=hackClick(10000000)>10M</div>
-					<div class=hack onclick=hackClick(100000000)>100M</div>
+				<div class='m'>
+					<div class='hack' onclick='hackClick(1000000)'>1M</div>
+					<div class='hack' onclick='hackClick(10000000)'>10M</div>
+					<div class='hack' onclick='hackClick(100000000)'>100M</div>
 				</div>
 			</div>
 		</div>
-
+		<div class='footer'>
+			Clicker &copy; 2016, <a href='http://piotrfrancug.pl/'>Piotr Francug</a> - <a href='https://twitter.com/PiotrFrancug/'>twitter</a>
+		</div>
 	</div>
-	<script src="jquery-3.1.0.min.js"></script>
-	<script src="index.js"></script>
+	<script src='jquery-3.1.0.min.js'></script>
+	<script src='index.js'></script>
 </body>
 
 </html>
