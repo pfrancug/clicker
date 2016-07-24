@@ -14,33 +14,138 @@ var Four = 0;
 var Five = 0;
 var Six = 0;
 
-/************ money ***********/
+/************ refresher ***********/
 
 function hackClick(number) {
 	money = money + number;
-	$('#money').text("$" + nFormatter(money, 2));
+	$('#money').text("$" + nFormatter(money, 1));
+	$('#quantityOne').text(One);
+	$('#quantityTwo').text(Two);
+	$('#quantityThree').text(Three);
+	$('#quantityFour').text(Four);
+	$('#quantityFive').text(Five);
+	$('#quantitySix').text(Six);
+	$('#costOne').text("$" + Math.floor(15 * Math.pow(1.15, One)));
+	$('#costTwo').text("$" + Math.floor(100 * Math.pow(1.15, Two)));
+	$('#costThree').text("$" + Math.floor(1100 * Math.pow(1.15, Three)));
+	$('#costFour').text("$" + Math.floor(12000 * Math.pow(1.15, Four)));
+	$('#costFive').text("$" + Math.floor(130000 * Math.pow(1.15, Five)));
+	$('#costSix').text("$" + Math.floor(1400000 * Math.pow(1.15, Six)));
 };
 
-/************ cookies ***********/
+/************ options and cookies***********/
 
-$(document).ready(function(){
-	if($.cookie('money') >= 0){
-		money = money + parseFloat($.cookie('money'));
-		console.log('money = $' + $.cookie('money'));
-	}
-	else{
-		$.cookie('money', money, { expires: 31 });
-		console.log('money saved');
-	}
+$('.options').click(function() {
+	$('.optionspanel').toggle();
 });
 
-$('#money').click(function(){
-	$.cookie('money', money, { expires: 31 });
-	console.log('money saved');
+var lis = [money, One, Two, Three, Four, Five, Six];
+var lit = ['money', 'One', 'Two', 'Three', 'Four', 'Five', 'Six'];
+
+$(document).ready(function() {
+	lit.forEach(function(entry) {
+		if ($.cookie(entry) >= 0) {
+			money = parseFloat($.cookie('money'));
+			One = parseFloat($.cookie('One'));
+			Two = parseFloat($.cookie('Two'));
+			Three = parseFloat($.cookie('Three'));
+			Four = parseFloat($.cookie('Four'));
+			Five = parseFloat($.cookie('Five'));
+			Six = parseFloat($.cookie('Six'));
+		} else {
+			$.cookie('money', money, {
+				expires: 31
+			});
+			$.cookie('One', One, {
+				expires: 31
+			});
+			$.cookie('Two', Two, {
+				expires: 31
+			});
+			$.cookie('Three', Three, {
+				expires: 31
+			});
+			$.cookie('Four', Four, {
+				expires: 31
+			});
+			$.cookie('Five', Five, {
+				expires: 31
+			});
+			$.cookie('Six', Six, {
+				expires: 31
+			});
+		}
+	});
+
+	if ($.cookie(lit[2]) > 0) {
+		$('.miner:nth-child(2)').fadeIn();
+	};
+	if ($.cookie(lit[3]) > 0) {
+		$('.miner:nth-child(3)').fadeIn();
+	};
+	if ($.cookie(lit[4]) > 0) {
+		$('.miner:nth-child(4)').fadeIn();
+	};
+	if ($.cookie(lit[5]) > 0) {
+		$('.miner:nth-child(5)').fadeIn();
+	};
+	if ($.cookie(lit[6]) > 0) {
+		$('.miner:nth-child(6)').fadeIn();
+	};
 });
 
-$('.sec').click(function(){
-	console.log($.cookie('money'));
+$('.save').click(function() {
+	$.cookie('money', money, {
+		expires: 31
+	});
+	$.cookie('One', One, {
+		expires: 31
+	});
+	$.cookie('Two', Two, {
+		expires: 31
+	});
+	$.cookie('Three', Three, {
+		expires: 31
+	});
+	$.cookie('Four', Four, {
+		expires: 31
+	});
+	$.cookie('Five', Five, {
+		expires: 31
+	});
+	$.cookie('Six', Six, {
+		expires: 31
+	});
+});
+
+$('.load').click(function() {
+	money = parseFloat($.cookie('money'));
+	One = parseFloat($.cookie('One'));
+	Two = parseFloat($.cookie('Two'));
+	Three = parseFloat($.cookie('Three'));
+	Four = parseFloat($.cookie('Four'));
+	Five = parseFloat($.cookie('Five'));
+	Six = parseFloat($.cookie('Six'));
+});
+
+$('.money').click(function() {
+	console.log('Money: ' + $.cookie('money'));
+	console.log('One: ' + $.cookie('One'));
+	console.log('Two: ' + $.cookie('Two'));
+	console.log('Three: ' + $.cookie('Three'));
+	console.log('Four: ' + $.cookie('Four'));
+	console.log('Five: ' + $.cookie('Five'));
+	console.log('Six: ' + $.cookie('Six'));
+});
+
+$('.reset').click(function() {
+	money = 0;
+	One = 0;
+	Two = 0;
+	Three = 0;
+	Four = 0;
+	Five = 0;
+	Six = 0;
 });
 
 /************ miners ***********/
@@ -51,7 +156,7 @@ $('.miner:nth-child(1)').click(function() {
 		One = One + 1;
 		money = money - costOne;
 		$('#quantityOne').text(One);
-		$('#money').text("$" + nFormatter(money, 2));
+		$('#money').text("$" + nFormatter(money, 1));
 		$('.miner:nth-child(2)').fadeIn(800);
 	};
 	var nextCost = Math.floor(15 * Math.pow(1.15, One));
@@ -64,7 +169,7 @@ $('.miner:nth-child(2)').click(function() {
 		Two = Two + 1;
 		money = money - costTwo;
 		$('#quantityTwo').text(Two);
-		$('#money').text("$" + nFormatter(money, 2));
+		$('#money').text("$" + nFormatter(money, 1));
 		$('.miner:nth-child(3)').fadeIn(800);
 	};
 	var nextCost = Math.floor(100 * Math.pow(1.15, Two));
@@ -77,7 +182,7 @@ $('.miner:nth-child(3)').click(function() {
 		Three = Three + 1;
 		money = money - costThree;
 		$('#quantityThree').text(Three);
-		$('#money').text("$" + nFormatter(money, 2));
+		$('#money').text("$" + nFormatter(money, 1));
 		$('.miner:nth-child(4)').fadeIn(800);
 	};
 	var nextCost = Math.floor(1100 * Math.pow(1.15, Three));
@@ -90,7 +195,7 @@ $('.miner:nth-child(4)').click(function() {
 		Four = Four + 1;
 		money = money - costFour;
 		$('#quantityFour').text(Four);
-		$('#money').text("$" + nFormatter(money, 2));
+		$('#money').text("$" + nFormatter(money, 1));
 		$('.miner:nth-child(5)').fadeIn(800);
 	};
 	var nextCost = Math.floor(12000 * Math.pow(1.15, Four));
@@ -103,7 +208,7 @@ $('.miner:nth-child(5)').click(function() {
 		Five = Five + 1;
 		money = money - costFive;
 		$('#quantityFive').text(Five);
-		$('#money').text("$" + nFormatter(money, 2));
+		$('#money').text("$" + nFormatter(money, 1));
 		$('.miner:nth-child(6)').fadeIn(800);
 	};
 	var nextCost = Math.floor(130000 * Math.pow(1.15, Five));
@@ -116,7 +221,7 @@ $('.miner:nth-child(6)').click(function() {
 		Six = Six + 1;
 		money = money - costSix;
 		$('#quantitySix').text(Six);
-		$('#money').text("$" + nFormatter(money, 2));
+		$('#money').text("$" + nFormatter(money, 1));
 		$('.miner:nth-child(7)').fadeIn(800);
 	};
 	var nextCost = Math.floor(1400000 * Math.pow(1.15, Six));
@@ -180,6 +285,6 @@ function nFormatter(num, digits) {
 
 window.setInterval(function() {
 	hackClick((One * 0.01) + (Two * 0.1) + (Three * 0.8) + (Four * 4.7) + (Five * 26) + (Six * 140));
-	$('.sec').text("$" + nFormatter((One * 0.1) + (Two * 1) + (Three * 8) + (Four * 47) + (Five * 260) + (Six * 1400), 2) + "/s");
+	$('.sec').text("$" + nFormatter((One * 0.1) + (Two * 1) + (Three * 8) + (Four * 47) + (Five * 260) + (Six * 1400), 1) + "/s");
 	document.title = "Clicker - $" + parseFloat(Math.round(money * 100) / 100).toFixed(1);;
 }, 100);

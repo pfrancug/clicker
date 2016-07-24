@@ -47,6 +47,14 @@ body {
 	line-height: 30px;
 }
 
+#money {
+	font-weight: bold;
+}
+
+.sec {
+	font-size: 14px;
+}
+
 .collect {
 	width: 160px;
 	height: 50px;
@@ -61,21 +69,59 @@ body {
 	cursor: hand;
 }
 
-.sec {
-	width: 160px;
-	margin: 20px;
-	outline: 1px solid #239023;
-	outline-offset: -5px;
-	background: -webkit-linear-gradient(#5bd75b 0%, #32cd32 30%, #32cd32 70%, #5bd75b 100%);
-	background: linear-gradient(#5bd75b 0%, #32cd32 30%, #32cd32 70%, #5bd75b 100%);
-	box-shadow: 0 2px 0 #239023;
-	line-height: 30px;
-}
-
 .collect:active {
 	-webkit-transform: translate(0px, 2px);
-	        transform: translate(0px, 2px);
+	transform: translate(0px, 2px);
 	box-shadow: 0 2px 0 #b36b00;
+}
+
+.options {
+	width: 160px;
+	height: 40px;
+	margin: 20px;
+	background: -webkit-linear-gradient(#64d22d 0%, #83db57 30%, #83db57 70%, #64d22d 100%);
+	background: linear-gradient(#64d22d 0%, #83db57 30%, #83db57 70%, #64d22d 100%);
+	box-shadow: 0 4px 0 #46931f;
+	outline: 1px solid #46931f;
+	outline-offset: -5px;
+	line-height: 40px;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.optionspanel {
+	width: 160px;
+	margin: 0 20px;
+}
+
+.optionspanel > div {
+	width: 70px;
+	height: 40px;
+	float: left;
+	background: -webkit-linear-gradient(#64d22d 0%, #83db57 30%, #83db57 70%, #64d22d 100%);
+	background: linear-gradient(#64d22d 0%, #83db57 30%, #83db57 70%, #64d22d 100%);
+	box-shadow: 0 4px 0 #46931f;
+	outline: 1px solid #46931f;
+	outline-offset: -5px;
+	line-height: 40px;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.options:active,
+.optionspanel > div:active {
+	-webkit-transform: translate(0px, 2px);
+	        transform: translate(0px, 2px);
+	box-shadow: 0 2px 0 #46931f;
+}
+
+.save {
+	margin: 0 20px 0 0;
+}
+
+.reset {
+	width: 160px !important;
+	margin: 20px 0;
 }
 
 .upgrade {
@@ -117,7 +163,7 @@ body {
 
 .upactive {
 	-webkit-transform: translate(0px, 2px);
-	transform: translate(0px, 2px);
+	        transform: translate(0px, 2px);
 	box-shadow: 0 2px 0 #6b00b3 !important;
 }
 
