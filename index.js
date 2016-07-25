@@ -230,15 +230,21 @@ $('.miner:nth-child(6)').click(function() {
 
 /************ upgrades ***********/
 
-$('.upgrades').click(function() {
-	$('.upgradespanel').toggle();
-});
-
-$('.up').click(function() {
+$('.upgrade').click(function() {
 	$(this).addClass('upactive');
 });
 
 /************ admin ***********/
+
+$(document).ready(function() {
+	$.getJSON("http://jsonip.com/?callback=?", function(data) {
+		console.log(data.ip);
+		if (data.ip == '91.229.22.18') {
+			$('.admin').removeClass('hidden');
+			console.log('Admin Granted');
+		};
+	});
+});
 
 $('.admin').click(function() {
 	$('.adminpanel').toggle();
