@@ -19,18 +19,6 @@ var Six = 0;
 function hackClick(number) {
 	money = money + number;
 	$('#money').text("$" + nFormatter(money, 1));
-	$('#quantityOne').text(One);
-	$('#quantityTwo').text(Two);
-	$('#quantityThree').text(Three);
-	$('#quantityFour').text(Four);
-	$('#quantityFive').text(Five);
-	$('#quantitySix').text(Six);
-	$('#costOne').text("$" + Math.floor(15 * Math.pow(1.15, One)));
-	$('#costTwo').text("$" + Math.floor(100 * Math.pow(1.15, Two)));
-	$('#costThree').text("$" + Math.floor(1100 * Math.pow(1.15, Three)));
-	$('#costFour').text("$" + Math.floor(12000 * Math.pow(1.15, Four)));
-	$('#costFive').text("$" + Math.floor(130000 * Math.pow(1.15, Five)));
-	$('#costSix').text("$" + Math.floor(1400000 * Math.pow(1.15, Six)));
 };
 
 /************ options and cookies***********/
@@ -292,5 +280,18 @@ function nFormatter(num, digits) {
 window.setInterval(function() {
 	hackClick((One * 0.01) + (Two * 0.1) + (Three * 0.8) + (Four * 4.7) + (Five * 26) + (Six * 140));
 	$('.sec').text("$" + nFormatter((One * 0.1) + (Two * 1) + (Three * 8) + (Four * 47) + (Five * 260) + (Six * 1400), 1) + "/s");
-	document.title = "Clicker - $" + parseFloat(Math.round(money * 100) / 100).toFixed(1);;
+	document.title = "Clicker - $" + parseFloat(Math.round(money * 100) / 100).toFixed(1);
+	$('#quantityOne').text(One);
+	$('#quantityTwo').text(Two);
+	$('#quantityThree').text(Three);
+	$('#quantityFour').text(Four);
+	$('#quantityFive').text(Five);
+	$('#quantitySix').text(Six);
+	$('#costOne').text("$" + Math.floor(15 * Math.pow(1.15, One)));
+	$('#costTwo').text("$" + Math.floor(100 * Math.pow(1.15, Two)));
+	$('#costThree').text("$" + Math.floor(1100 * Math.pow(1.15, Three)));
+	$('#costFour').text("$" + Math.floor(12000 * Math.pow(1.15, Four)));
+	$('#costFive').text("$" + Math.floor(130000 * Math.pow(1.15, Five)));
+	$('#costSix').text("$" + Math.floor(1400000 * Math.pow(1.15, Six)));
+
 }, 100);
