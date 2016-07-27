@@ -12,6 +12,11 @@ body {
 	user-select: none;
 }
 
+::-webkit-scrollbar {
+    width:0;
+	height:0;
+}
+
 .hidden {
 	display: none !important;
 }
@@ -192,6 +197,14 @@ body {
 	height: calc(100% - 40px);
 	margin: 20px;
 	overflow-y: scroll;
+}
+
+.hidemine::-webkit-scrollbar {
+	width:1px;
+}
+ 
+.hidemine::-webkit-scrollbar-thumb {
+	background:#8fa6bc;
 }
 
 .miner {
