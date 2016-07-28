@@ -1,3 +1,10 @@
+/*
+ *  Clicker
+ *  https://github.com/pfrancug/clicker
+ *  Copyright (c) 2016 Piotr Francug
+ *  Released under the MIT license
+ */
+ 
 var money = 0;
 var One = 0;
 var Two = 0;
