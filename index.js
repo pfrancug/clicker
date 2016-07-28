@@ -51,7 +51,7 @@ $(document).ready(function() {
 			Four = parseFloat($.cookie('Four'));
 			Five = parseFloat($.cookie('Five'));
 			Six = parseFloat($.cookie('Six'));
-		};
+		}
 		else {
 			$.cookie('money', money, {
 				expires: 31
