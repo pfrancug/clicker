@@ -9,36 +9,30 @@ body {
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
-	user-select: none;
+	user-select: none
 }
 
 ::-webkit-scrollbar {
-    width:0;
-	height:0;
-}
-
-.hidden {
-	display: none !important;
+	width: 0;
+	height: 0
 }
 
 .container {
 	width: 100%;
-	height: 100%;
+	height: 100%
 }
 
 .container > div {
 	width: 100vw;
 	min-width: 600px;
 	float: left;
-	outline-offset: -5px;
+	outline-offset: -5px
 }
-
-/********** overview **********/
 
 .overview {
 	height: 100px;
 	background: #597043;
-	outline: 1px dashed #a6bc8f;
+	outline: 1px dashed #a6bc8f
 }
 
 .money {
@@ -49,20 +43,20 @@ body {
 	outline-offset: -5px;
 	background: -webkit-linear-gradient(#5bd75b 0%, #32cd32 30%, #32cd32 70%, #5bd75b 100%);
 	background: linear-gradient(#5bd75b 0%, #32cd32 30%, #32cd32 70%, #5bd75b 100%);
-	box-shadow: 0 2px 0 #239023;
+	box-shadow: 0 2px 0 #239023
 }
 
 .money > div {
 	width: 100px;
-	line-height: 30px;
+	line-height: 30px
 }
 
 #money {
-	font-weight: bold;
+	font-weight: bold
 }
 
 .sec {
-	font-size: 14px;
+	font-size: 14px
 }
 
 .collect {
@@ -76,13 +70,13 @@ body {
 	outline-offset: -5px;
 	line-height: 60px;
 	cursor: pointer;
-	cursor: hand;
+	cursor: hand
 }
 
 .collect:active {
 	-webkit-transform: translate(0px, 2px);
 	transform: translate(0px, 2px);
-	box-shadow: 0 2px 0 #b36b00;
+	box-shadow: 0 2px 0 #b36b00
 }
 
 .options {
@@ -96,7 +90,7 @@ body {
 	outline-offset: -5px;
 	line-height: 40px;
 	cursor: pointer;
-	cursor: hand;
+	cursor: hand
 }
 
 .optionspanel > div {
@@ -110,14 +104,14 @@ body {
 	outline-offset: -5px;
 	line-height: 40px;
 	cursor: pointer;
-	cursor: hand;
+	cursor: hand
 }
 
 .options:active,
 .optionspanel > div:active {
 	-webkit-transform: translate(0px, 2px);
 	transform: translate(0px, 2px);
-	box-shadow: 0 2px 0 #46931f;
+	box-shadow: 0 2px 0 #46931f
 }
 
 .admin,
@@ -133,28 +127,26 @@ body {
 	outline-offset: -5px;
 	line-height: 40px;
 	cursor: pointer;
-	cursor: hand;
+	cursor: hand
 }
 
 .admin:active,
 .hack:active {
 	-webkit-transform: translate(0px, 2px);
 	transform: translate(0px, 2px);
-	box-shadow: 0 2px 0 #b3006b;
+	box-shadow: 0 2px 0 #b3006b
 }
 
 .buildingsactive {
 	-webkit-transform: translate(0px, 2px);
 	transform: translate(0px, 2px);
-	box-shadow: 0 2px 0 #b3006b !important;
+	box-shadow: 0 2px 0 #b3006b !important
 }
-
-/********** upgrade **********/
 
 .upgrades {
 	height: 80px;
 	background: #594370;
-	outline: 1px dashed #a58fbc;
+	outline: 1px dashed #a58fbc
 }
 
 .upgrade {
@@ -168,42 +160,40 @@ body {
 	outline-offset: -5px;
 	line-height: 40px;
 	cursor: pointer;
-	cursor: hand;
+	cursor: hand
 }
 
 .upgrade:active {
 	-webkit-transform: translate(0px, 2px);
 	transform: translate(0px, 2px);
-	box-shadow: 0 2px 0 #6b00b3;
+	box-shadow: 0 2px 0 #6b00b3
 }
 
 .upactive {
 	-webkit-transform: translate(0px, 2px);
 	transform: translate(0px, 2px);
-	box-shadow: 0 2px 0 #6b00b3 !important;
+	box-shadow: 0 2px 0 #6b00b3 !important
 }
-
-/********** mienrs **********/
 
 .miners {
 	height: calc(100% - 210px);
 	min-height: 130px;
 	background: #435970;
-	outline: 1px dashed #8fa6bc;
+	outline: 1px dashed #8fa6bc
 }
 
 .hidemine {
 	height: calc(100% - 40px);
 	margin: 20px;
-	overflow-y: scroll;
+	overflow-y: scroll
 }
 
 .hidemine::-webkit-scrollbar {
-	width:1px;
+	width: 1px
 }
- 
+
 .hidemine::-webkit-scrollbar-thumb {
-	background:#8fa6bc;
+	background: #8fa6bc
 }
 
 .miner {
@@ -216,21 +206,30 @@ body {
 	outline: 1px solid #0056b3;
 	outline-offset: -5px;
 	cursor: pointer;
-	cursor: hand;
+	cursor: hand
 }
 
 .miner:nth-last-child(1) {
-	margin: 0 0 2px 0 !important;
+	margin: 0 0 2px 0 !important
+}
+
+.unavailable {
+	background: -webkit-linear-gradient(#007bff 0%, #006fe6 30%, #006fe6 70%, #007bff 100%) !important;
+	background: linear-gradient(#007bff 0%, #006fe6 30%, #006fe6 70%, #007bff 100%) !important;
+	-webkit-transform: translate(0px, 2px);
+	transform: translate(0px, 2px);
+	box-shadow: 0 2px 0 #0063cc !important;
+	outline: 1px solid #0063cc !important;
 }
 
 .hidemine > div:active {
 	-webkit-transform: translate(0px, 2px);
 	transform: translate(0px, 2px);
-	box-shadow: 0 2px 0 #0056b3;
+	box-shadow: 0 2px 0 #0063cc
 }
 
 .miner > div {
-	float: left;
+	float: left
 }
 
 .pic {
@@ -239,14 +238,14 @@ body {
 	left: 10px;
 	width: 70px;
 	height: 70px;
-	line-height: 70px;
+	line-height: 70px
 }
 
 .name {
 	position: relative;
 	top: 20px;
 	left: 20px;
-	width: 180px;
+	width: 180px
 }
 
 .quantity {
@@ -255,39 +254,37 @@ body {
 	left: 30px;
 	width: 70px;
 	height: 70px;
-	line-height: 70px;
+	line-height: 70px
 }
 
 .cost {
 	position: relative;
 	bottom: 20px;
 	left: 90px;
-	width: 180px;
+	width: 180px
 }
-
-/********** footer **********/
 
 .footer {
 	height: 30px;
 	background: #705943;
 	outline: 1px dashed #bca58f;
 	font-size: 13px;
-	line-height: 30px;
+	line-height: 30px
 }
 
 .footer a {
-	text-decoration: none;
+	text-decoration: none
 }
 
 .footer a:link,
 .footer a:visited {
-	color: #ffad33;
+	color: #ffad33
 }
 
 .footer a:hover {
-	color: #ff9900;
+	color: #ff9900
 }
 
 .footer a:active - a {
-	color: #b36b00;
+	color: #b36b00
 }

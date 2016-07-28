@@ -1,11 +1,3 @@
-/*
-Copyright (C) 2016, Piotr Francug
-This file is licensed under the GNU General Public License v3.0
-A copy of this license may be found at https://www.gnu.org/licenses/gpl-3.0.txt
-*/
-
-/************ vars ***********/
-
 var money = 0;
 var One = 0;
 var Two = 0;
@@ -13,23 +5,35 @@ var Three = 0;
 var Four = 0;
 var Five = 0;
 var Six = 0;
-
-/************ refresher ***********/
+var upOne = 0;
+var upTwo = 0;
+var upThree = 0;
 
 function hackClick(number) {
 	money = money + number;
 	$('#money').text("$" + nFormatter(money, 1));
 };
 
-/************ options and cookies***********/
+$('.collect').click(function() {
+	hackClick(1);
+	if (upOne == 1) {
+		hackClick(1);
+	};
+	if (upTwo == 1) {
+		hackClick(2);
+	};
+	if (upThree == 1) {
+		hackClick(4);
+	};
+});
 
 $('.options').click(function() {
+	$('.adminpanel').hide();
 	$('.optionspanel').toggle();
 });
 
 var lis = [money, One, Two, Three, Four, Five, Six];
 var lit = ['money', 'One', 'Two', 'Three', 'Four', 'Five', 'Six'];
-
 $(document).ready(function() {
 	lit.forEach(function(entry) {
 		if ($.cookie(entry) >= 0) {
@@ -40,7 +44,8 @@ $(document).ready(function() {
 			Four = parseFloat($.cookie('Four'));
 			Five = parseFloat($.cookie('Five'));
 			Six = parseFloat($.cookie('Six'));
-		} else {
+		};
+		else {
 			$.cookie('money', money, {
 				expires: 31
 			});
@@ -62,23 +67,37 @@ $(document).ready(function() {
 			$.cookie('Six', Six, {
 				expires: 31
 			});
-		}
+		};
 	});
-
+	if ($.cookie(lit[1]) > 0) {
+		$('.miner:nth-child(2)').show();
+	};
 	if ($.cookie(lit[2]) > 0) {
-		$('.miner:nth-child(2)').fadeIn();
+		$('.miner:nth-child(3)').show();
 	};
 	if ($.cookie(lit[3]) > 0) {
-		$('.miner:nth-child(3)').fadeIn();
+		$('.miner:nth-child(4)').show();
 	};
 	if ($.cookie(lit[4]) > 0) {
-		$('.miner:nth-child(4)').fadeIn();
+		$('.miner:nth-child(5)').show();
 	};
 	if ($.cookie(lit[5]) > 0) {
-		$('.miner:nth-child(5)').fadeIn();
+		$('.miner:nth-child(6)').show();
 	};
 	if ($.cookie(lit[6]) > 0) {
-		$('.miner:nth-child(6)').fadeIn();
+		$('.miner:nth-child(7)').show();
+	};
+	if ($.cookie('upOne') == 1) {
+		upOne = 1;
+		$('#upOne').addClass('upactive');
+	};
+	if ($.cookie('upTwo') == 1) {
+		upTwo = 1;
+		$('#upTwo').addClass('upactive');
+	};
+	if ($.cookie('upThree') == 1) {
+		upThree = 1;
+		$('#upThree').addClass('upactive');
 	};
 });
 
@@ -104,6 +123,15 @@ $('.save').click(function() {
 	$.cookie('Six', Six, {
 		expires: 31
 	});
+	$.cookie('upOne', upOne, {
+		expires: 31
+	});
+	$.cookie('upTwo', upTwo, {
+		expires: 31
+	});
+	$.cookie('upThree', upThree, {
+		expires: 31
+	});
 });
 
 $('.load').click(function() {
@@ -114,6 +142,9 @@ $('.load').click(function() {
 	Four = parseFloat($.cookie('Four'));
 	Five = parseFloat($.cookie('Five'));
 	Six = parseFloat($.cookie('Six'));
+	upOne = parseFloat($.cookie('upOne'));
+	upTwo = parseFloat($.cookie('upTwo'));
+	upThree = parseFloat($.cookie('upThree'));
 });
 
 $('.money').click(function() {
@@ -124,6 +155,9 @@ $('.money').click(function() {
 	console.log('Four: ' + $.cookie('Four'));
 	console.log('Five: ' + $.cookie('Five'));
 	console.log('Six: ' + $.cookie('Six'));
+	console.log('upOne: ' + $.cookie('upOne'));
+	console.log('upTwo: ' + $.cookie('upTwo'));
+	console.log('upThree: ' + $.cookie('upThree'));
 });
 
 $('.reset').click(function() {
@@ -134,9 +168,52 @@ $('.reset').click(function() {
 	Four = 0;
 	Five = 0;
 	Six = 0;
+	upOne = 0;
+	upTwo = 0;
+	upThree = 0;
+	$('.upgrade').removeClass('upactive');
+	$('.miner:nth-child(2), .miner:nth-child(3), .miner:nth-child(4), .miner:nth-child(5), .miner:nth-child(6)').hide();
+	$('.buildings').removeClass('buildingsactive');
 });
 
-/************ miners ***********/
+function available() {
+	if (Math.floor(15 * Math.pow(1.15, One)) > money) {
+		$('.miner:nth-child(1)').addClass('unavailable');
+	};
+	if (Math.floor(15 * Math.pow(1.15, One)) <= money) {
+		$('.miner:nth-child(1)').removeClass('unavailable');
+	};
+	if (Math.floor(100 * Math.pow(1.15, Two)) > money) {
+		$('.miner:nth-child(2)').addClass('unavailable');
+	};
+	if (Math.floor(100 * Math.pow(1.15, Two)) <= money) {
+		$('.miner:nth-child(2)').removeClass('unavailable');
+	};
+	if (Math.floor(1100 * Math.pow(1.15, Three)) > money) {
+		$('.miner:nth-child(3)').addClass('unavailable');
+	};
+	if (Math.floor(1100 * Math.pow(1.15, Three)) <= money) {
+		$('.miner:nth-child(3)').removeClass('unavailable');
+	};
+	if (Math.floor(12000 * Math.pow(1.15, Four)) > money) {
+		$('.miner:nth-child(4)').addClass('unavailable');
+	};
+	if (Math.floor(12000 * Math.pow(1.15, Four)) <= money) {
+		$('.miner:nth-child(4)').removeClass('unavailable');
+	};
+	if (Math.floor(130000 * Math.pow(1.15, Five)) > money) {
+		$('.miner:nth-child(5)').addClass('unavailable');
+	};
+	if (Math.floor(130000 * Math.pow(1.15, Five)) <= money) {
+		$('.miner:nth-child(5)').removeClass('unavailable');
+	};
+	if (Math.floor(1400000 * Math.pow(1.15, Six)) > money) {
+		$('.miner:nth-child(6)').addClass('unavailable');
+	};
+	if (Math.floor(1400000 * Math.pow(1.15, Six)) <= money) {
+		$('.miner:nth-child(6)').removeClass('unavailable');
+	};
+};
 
 $('.miner:nth-child(1)').click(function() {
 	var costOne = Math.floor(15 * Math.pow(1.15, One));
@@ -148,7 +225,7 @@ $('.miner:nth-child(1)').click(function() {
 		$('.miner:nth-child(2)').fadeIn(800);
 	};
 	var nextCost = Math.floor(15 * Math.pow(1.15, One));
-	$('#costOne').text("$" + nextCost);
+	$('#costOne').text("$" + nFormatter(nextCost, 1));
 });
 
 $('.miner:nth-child(2)').click(function() {
@@ -161,7 +238,7 @@ $('.miner:nth-child(2)').click(function() {
 		$('.miner:nth-child(3)').fadeIn(800);
 	};
 	var nextCost = Math.floor(100 * Math.pow(1.15, Two));
-	$('#costTwo').text("$" + nextCost);
+	$('#costTwo').text("$" + nFormatter(nextCost, 1));
 });
 
 $('.miner:nth-child(3)').click(function() {
@@ -174,7 +251,7 @@ $('.miner:nth-child(3)').click(function() {
 		$('.miner:nth-child(4)').fadeIn(800);
 	};
 	var nextCost = Math.floor(1100 * Math.pow(1.15, Three));
-	$('#costThree').text("$" + nextCost);
+	$('#costThree').text("$" + nFormatter(nextCost, 1));
 });
 
 $('.miner:nth-child(4)').click(function() {
@@ -187,7 +264,7 @@ $('.miner:nth-child(4)').click(function() {
 		$('.miner:nth-child(5)').fadeIn(800);
 	};
 	var nextCost = Math.floor(12000 * Math.pow(1.15, Four));
-	$('#costFour').text("$" + nextCost);
+	$('#costFour').text("$" + nFormatter(nextCost, 1));
 });
 
 $('.miner:nth-child(5)').click(function() {
@@ -200,7 +277,7 @@ $('.miner:nth-child(5)').click(function() {
 		$('.miner:nth-child(6)').fadeIn(800);
 	};
 	var nextCost = Math.floor(130000 * Math.pow(1.15, Five));
-	$('#costFive').text("$" + nextCost);
+	$('#costFive').text("$" + nFormatter(nextCost, 1));
 });
 
 $('.miner:nth-child(6)').click(function() {
@@ -213,28 +290,32 @@ $('.miner:nth-child(6)').click(function() {
 		$('.miner:nth-child(7)').fadeIn(800);
 	};
 	var nextCost = Math.floor(1400000 * Math.pow(1.15, Six));
-	$('#costSix').text("$" + nextCost);
+	$('#costSix').text("$" + nFormatter(nextCost, 1));
 });
 
-/************ upgrades ***********/
-
-$('.upgrade').click(function() {
-	$(this).addClass('upactive');
+$('#upOne').click(function() {
+	if (money >= 100) {
+		upOne = 1;
+		$(this).addClass('upactive');
+	};
 });
 
-/************ admin ***********/
+$('#upTwo').click(function() {
+	if (money >= 500) {
+		upTwo = 1;
+		$(this).addClass('upactive');
+	};
+});
 
-$(document).ready(function() {
-	$.getJSON("http://jsonip.com/?callback=?", function(data) {
-		console.log(data.ip);
-		if (data.ip == '91.229.22.18') {
-			$('.admin').removeClass('hidden');
-			console.log('Admin Granted');
-		};
-	});
+$('#upThree').click(function() {
+	if (money >= 10000) {
+		upThree = 1;
+		$(this).addClass('upactive');
+	};
 });
 
 $('.admin').click(function() {
+	$('.optionspanel').hide();
 	$('.adminpanel').toggle();
 });
 
@@ -243,7 +324,9 @@ $('.buildings').click(function() {
 	$('.miner').show();
 });
 
-/************ formatter ***********/
+$('.hack').click(function() {
+	hackClick(10000000);
+});
 
 function nFormatter(num, digits) {
 	var si = [{
@@ -270,28 +353,26 @@ function nFormatter(num, digits) {
 	for (i = 0; i < si.length; i++) {
 		if (num >= si[i].value) {
 			return (num / si[i].value).toFixed(digits).replace(rx, "$1") + si[i].symbol;
-		}
-	}
+		};
+	};
 	return parseFloat(num).toFixed(digits).replace(rx, "$1");
-}
-
-/************ timer ***********/
+};
 
 window.setInterval(function() {
 	hackClick((One * 0.01) + (Two * 0.1) + (Three * 0.8) + (Four * 4.7) + (Five * 26) + (Six * 140));
 	$('.sec').text("$" + nFormatter((One * 0.1) + (Two * 1) + (Three * 8) + (Four * 47) + (Five * 260) + (Six * 1400), 1) + "/s");
-	document.title = "Clicker - $" + parseFloat(Math.round(money * 100) / 100).toFixed(1);
+	document.title = "Clicker - $" + nFormatter(money, 1);
+	available();
 	$('#quantityOne').text(One);
 	$('#quantityTwo').text(Two);
 	$('#quantityThree').text(Three);
 	$('#quantityFour').text(Four);
 	$('#quantityFive').text(Five);
 	$('#quantitySix').text(Six);
-	$('#costOne').text("$" + Math.floor(15 * Math.pow(1.15, One)));
-	$('#costTwo').text("$" + Math.floor(100 * Math.pow(1.15, Two)));
-	$('#costThree').text("$" + Math.floor(1100 * Math.pow(1.15, Three)));
-	$('#costFour').text("$" + Math.floor(12000 * Math.pow(1.15, Four)));
-	$('#costFive').text("$" + Math.floor(130000 * Math.pow(1.15, Five)));
-	$('#costSix').text("$" + Math.floor(1400000 * Math.pow(1.15, Six)));
-
+	$('#costOne').text("$" + nFormatter(Math.floor(15 * Math.pow(1.15, One)), 1));
+	$('#costTwo').text("$" + nFormatter(Math.floor(100 * Math.pow(1.15, Two)), 1));
+	$('#costThree').text("$" + nFormatter(Math.floor(1100 * Math.pow(1.15, Three)), 1));
+	$('#costFour').text("$" + nFormatter(Math.floor(12000 * Math.pow(1.15, Four)), 1));
+	$('#costFive').text("$" + nFormatter(Math.floor(130000 * Math.pow(1.15, Five)), 1));
+	$('#costSix').text("$" + nFormatter(Math.floor(1400000 * Math.pow(1.15, Six)), 1));
 }, 100);
