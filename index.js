@@ -35,7 +35,6 @@ $('.collect').click(function() {
 });
 
 $('.options').click(function() {
-	$('.adminpanel').hide();
 	$('.optionspanel').toggle();
 });
 
@@ -51,48 +50,25 @@ $(document).ready(function() {
 			Four = parseFloat($.cookie('Four'));
 			Five = parseFloat($.cookie('Five'));
 			Six = parseFloat($.cookie('Six'));
-		}
-		else {
-			$.cookie('money', money, {
-				expires: 31
-			});
-			$.cookie('One', One, {
-				expires: 31
-			});
-			$.cookie('Two', Two, {
-				expires: 31
-			});
-			$.cookie('Three', Three, {
-				expires: 31
-			});
-			$.cookie('Four', Four, {
-				expires: 31
-			});
-			$.cookie('Five', Five, {
-				expires: 31
-			});
-			$.cookie('Six', Six, {
-				expires: 31
-			});
 		};
 	});
 	if ($.cookie(lit[1]) > 0) {
 		$('.miner:nth-child(2)').show();
 	};
 	if ($.cookie(lit[2]) > 0) {
-		$('.miner:nth-child(3)').show();
+		$('.miner:nth-child(2), .miner:nth-child(3)').show();
 	};
 	if ($.cookie(lit[3]) > 0) {
-		$('.miner:nth-child(4)').show();
+		$('.miner:nth-child(3), .miner:nth-child(4)').show();
 	};
 	if ($.cookie(lit[4]) > 0) {
-		$('.miner:nth-child(5)').show();
+		$('.miner:nth-child(4), .miner:nth-child(5)').show();
 	};
 	if ($.cookie(lit[5]) > 0) {
-		$('.miner:nth-child(6)').show();
+		$('.miner:nth-child(5), .miner:nth-child(6)').show();
 	};
 	if ($.cookie(lit[6]) > 0) {
-		$('.miner:nth-child(7)').show();
+		$('.miner:nth-child(6)').show();
 	};
 	if ($.cookie('upOne') == 1) {
 		upOne = 1;
@@ -108,7 +84,7 @@ $(document).ready(function() {
 	};
 });
 
-$('.save').click(function() {
+function saveToCookies() {
 	$.cookie('money', money, {
 		expires: 31
 	});
@@ -139,20 +115,7 @@ $('.save').click(function() {
 	$.cookie('upThree', upThree, {
 		expires: 31
 	});
-});
-
-$('.load').click(function() {
-	money = parseFloat($.cookie('money'));
-	One = parseFloat($.cookie('One'));
-	Two = parseFloat($.cookie('Two'));
-	Three = parseFloat($.cookie('Three'));
-	Four = parseFloat($.cookie('Four'));
-	Five = parseFloat($.cookie('Five'));
-	Six = parseFloat($.cookie('Six'));
-	upOne = parseFloat($.cookie('upOne'));
-	upTwo = parseFloat($.cookie('upTwo'));
-	upThree = parseFloat($.cookie('upThree'));
-});
+};
 
 $('.money').click(function() {
 	console.log('Money: ' + $.cookie('money'));
@@ -321,11 +284,6 @@ $('#upThree').click(function() {
 	};
 });
 
-$('.admin').click(function() {
-	$('.optionspanel').hide();
-	$('.adminpanel').toggle();
-});
-
 $('.buildings').click(function() {
 	$(this).addClass('buildingsactive');
 	$('.miner').show();
@@ -370,6 +328,7 @@ window.setInterval(function() {
 	$('.sec').text("$" + nFormatter((One * 0.1) + (Two * 1) + (Three * 8) + (Four * 47) + (Five * 260) + (Six * 1400), 1) + "/s");
 	document.title = "Clicker - $" + nFormatter(money, 1);
 	available();
+	saveToCookies();
 	$('#quantityOne').text(One);
 	$('#quantityTwo').text(Two);
 	$('#quantityThree').text(Three);

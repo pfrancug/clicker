@@ -94,8 +94,8 @@ body {
 }
 
 .optionspanel > div {
-	width: 55px;
 	margin: 20px 5px 0 0;
+	padding:0 10px;
 	float: right;
 	background: -webkit-linear-gradient(#64d22d 0%, #83db57 30%, #83db57 70%, #64d22d 100%);
 	background: linear-gradient(#64d22d 0%, #83db57 30%, #83db57 70%, #64d22d 100%);
@@ -114,33 +114,10 @@ body {
 	box-shadow: 0 2px 0 #46931f
 }
 
-.admin,
-.buildings,
-.hack {
-	padding: 0 10px;
-	margin: 20px 5px 0 0;
-	float: right;
-	background: -webkit-linear-gradient(#ff33ad 0%, #ff0099 30%, #ff0099 70%, #ff33ad 100%);
-	background: linear-gradient(#ff33ad 0%, #ff0099 30%, #ff0099 70%, #ff33ad 100%);
-	box-shadow: 0 4px 0 #b3006b;
-	outline: 1px solid #b3006b;
-	outline-offset: -5px;
-	line-height: 40px;
-	cursor: pointer;
-	cursor: hand
-}
-
-.admin:active,
-.hack:active {
-	-webkit-transform: translate(0px, 2px);
-	transform: translate(0px, 2px);
-	box-shadow: 0 2px 0 #b3006b
-}
-
 .buildingsactive {
 	-webkit-transform: translate(0px, 2px);
 	transform: translate(0px, 2px);
-	box-shadow: 0 2px 0 #b3006b !important
+	box-shadow: 0 2px 0 #46931f !important
 }
 
 .upgrades {
@@ -150,7 +127,7 @@ body {
 }
 
 .upgrade {
-	width: 60px;
+	width: 140px;
 	margin: 20px 0 20px 20px;
 	float: left;
 	background: -webkit-linear-gradient(#ad33ff 0%, #9900ff 30%, #9900ff 70%, #ad33ff 100%);
