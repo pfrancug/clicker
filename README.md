@@ -1,1 +1,1 @@
-Check the result here: http://piotrfrancug.pl/projects/clicker/
+Check the result here: http://francug.eu/projects/clicker/
